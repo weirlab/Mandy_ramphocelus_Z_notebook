@@ -1,0 +1,21 @@
+#Step 1 download openmpi into /home/0_PROGRAMS# 
+#Step 2 unzpip it:
+tar -xzvf /home/0_PROGRAMS/openmpi-4.0.5.tar.gz
+
+#Step 3 Installation:
+cd /home/0_PROGRAMS/openmpi-4.0.5
+./configure --prefix=/home/0_PROGRAMS/openmpi-4.0.5
+make all
+make install
+
+#when running another program that requires openmpi, you might have to fist indicate the location of the program. We often do this as follows before running the program:
+
+export PATH=/home/0_PROGRAMS/openmpi-4.0.5/bin:$PATH
+
+#That line tells the computer to search in that path for programs it is looking to run.
+
+#You can verify it is working by running:
+
+export PATH=/home/0_PROGRAMS/openmpi-4.0.5/bin:$PATH
+mpiexec --version
+
